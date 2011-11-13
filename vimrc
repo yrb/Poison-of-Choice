@@ -7,9 +7,9 @@ filetype plugin indent on
 if has('gui_running')
   set background=dark
   colorscheme solarized
-" Font: Choose font and enable anti-aliasing
-" set guifont=Monaco:h11
-" set antialias
+
+ set guifont=Menlo:h11
+ set antialias
 endif
 
 " Allow vim to hide buffers with changes
@@ -127,3 +127,7 @@ nnoremap Y y$
 
 " ExitInsertMode: Alternative keybinding
 imap jj <Esc>
+imap kk <Esc>
+
+" Don't wrap lines by default
+set nowrap
