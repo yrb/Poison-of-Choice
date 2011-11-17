@@ -112,7 +112,7 @@ set statusline+=%{rvm#statusline()}\ "
 set statusline+=%{fugitive#statusline()}\ "
 set statusline+=%-14.(%l,%c%V%)\ %<%P " offset
 
-if has("mac")
+if has("mac") && has('gui_running')
   " Unmap Apple+S to remap to Esc, then :w<CR>
   macmenu &File.Save key=<nop>
   imap <D-s> <Esc>:w<CR>
