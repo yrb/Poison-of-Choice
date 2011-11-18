@@ -141,3 +141,11 @@ nnoremap <silent> <leader>/ :execute 'vimgrep /'.@/.'/g %'<CR>:copen<CR>
 " Ack for the last search.
 nnoremap <silent> <leader>? :execute "Ack! '" . substitute(substitute(substitute(@/, "\\\\<", "\\\\b", ""), "\\\\>", "\\\\b", ""), "\\\\v", "", "") . "'"<CR>
 
+" Map arrow keys to window resizing
+if bufwinnr(1)
+  map <Up> <C-W>-
+  map <Down> <C-W>+
+  map <Left> <C-W><
+  map <Right> <C-W>>
+endif
+
