@@ -52,7 +52,7 @@ set shiftwidth=2
 " Round indent by a multiple of shiftwidth in indent mode
 set shiftround
 
-set number                              " Enable line numbers
+set relativenumber
 set numberwidth=3                       " Set line number column width 
 
 " WindowAndBufferManagement:
@@ -108,6 +108,7 @@ set statusline+=%{strlen(&ft)?&ft:'none'} " filetype
 set statusline+=]
 set statusline+=%h%1*%m%r%w%0* " flag
 set statusline+=%= " right align
+set statusline+=%{ruby_debugger#statusline()}
 set statusline+=%{rvm#statusline()}\ "
 set statusline+=%{fugitive#statusline()}\ "
 set statusline+=%-14.(%l,%c%V%)\ %<%P " offset
