@@ -4,10 +4,10 @@ set nocompatible
 syntax on
 filetype plugin indent on
 
-if has('gui_running')
-  set background=dark
-  colorscheme solarized
+set background=dark
+colorscheme solarized
 
+if has('gui_running')
  set guifont=Menlo:h11
  set antialias
 endif
@@ -142,11 +142,17 @@ nnoremap <silent> <leader>/ :execute 'vimgrep /'.@/.'/g %'<CR>:copen<CR>
 " Ack for the last search.
 nnoremap <silent> <leader>? :execute "Ack! '" . substitute(substitute(substitute(@/, "\\\\<", "\\\\b", ""), "\\\\>", "\\\\b", ""), "\\\\v", "", "") . "'"<CR>
 
-" Map arrow keys to window resizing
-if bufwinnr(1)
-  map <Up> <C-W>-
-  map <Down> <C-W>+
-  map <Left> <C-W><
-  map <Right> <C-W>>
-endif
+" Common setting for ruby debug
+let g:ruby_debugger_default_script = 'script/rails s'
+let g:ruby_debugger_spec_path = 'rspec'         " set Rspec path
 
+" Map arrow keys to window resizing
+" if bufwinnr(1)
+"   map <Up> <C-W>-
+"   map <Down> <C-W>+
+"   map <Left> <C-W><
+"   map <Right> <C-W>>
+" endif
+
+
+nnoremap <C-W>V :vertical bo split<CR>
