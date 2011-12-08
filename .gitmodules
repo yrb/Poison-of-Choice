@@ -58,3 +58,6 @@
 [submodule "bundle/vim-monokai"]
 	path = bundle/vim-monokai
 	url = git://github.com/sickill/vim-monokai.git
+[submodule "bundle/vim-clojure"]
+	path = bundle/vim-clojure
+	url = git://github.com/vim-scripts/VimClojure.git

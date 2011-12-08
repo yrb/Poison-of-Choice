@@ -156,3 +156,27 @@ let g:ruby_debugger_spec_path = 'rspec'         " set Rspec path
 
 
 nnoremap <C-W>V :vertical bo split<CR>
+
+" Setup Supertab, also :SuperTabHelp
+let g:SuperTabDefaultCompletionType = "<c-n>"
+set complete=.,w,b,u,i
+
+" .	scan the current buffer ('wrapscan' is ignored)
+" w	scan buffers from other windows
+" b	scan other loaded buffers that are in the buffer list
+" u	scan the unloaded buffers that are in the buffer list
+" U	scan the buffers that are not in the buffer list
+" k	scan the files given with the 'dictionary' option
+" kspell  use the currently active spell checking |spell|
+" k{dict}	scan the file {dict}.  Several "k" flags can be given,
+" 	patterns are valid too.  For example: >
+" 		:set cpt=k/usr/dict/*,k~/spanish
+" <	s	scan the files given with the 'thesaurus' option
+" s{tsr}	scan the file {tsr}.  Several "s" flags can be given, patterns
+" 	are valid too.
+" i	scan current and included files
+" d	scan current and included files for defined name or macro
+" 	|i_CTRL-X_CTRL-D|
+" ]	tag completion
+" t	same as above 
+
