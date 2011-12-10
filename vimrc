@@ -113,11 +113,22 @@ set statusline+=%{rvm#statusline()}\ "
 set statusline+=%{fugitive#statusline()}\ "
 set statusline+=%-14.(%l,%c%V%)\ %<%P " offset
 
+function! ToggleFontSize()
+  if exists("g:large_font") && g:large_font == 1
+    let g:large_font = 0
+    set guifont=Menlo:h11
+  else
+    let g:large_font = 1
+    set guifont=Menlo:h15
+  end
+endfunction
+
 if has("mac") && has('gui_running')
   " Unmap Apple+S to remap to Esc, then :w<CR>
   macmenu &File.Save key=<nop>
   imap <D-s> <Esc>:w<CR>
   map <D-s> :w<CR>
+  map <D-H> :call ToggleFontSize()<CR>
 end
 
 " Map Leader: Reset from \ to ,
