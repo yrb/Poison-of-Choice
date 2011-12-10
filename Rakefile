@@ -43,5 +43,10 @@ task :uninstall do
 	puts "Uninstalled #{TITLE}"
 end
 
+desc 'Update pathogen plugins'
+task :update_plugins do
+  system "git submodule foreach git pull"
+end
+
 task :default => ['install']
 
