@@ -22,6 +22,9 @@ task :install do
 		FileUtils.symlink source, destination
 	end
 
+  puts "Installing vim plugins"
+  system "git submodule update --init" 
+
 	puts "Installed #{TITLE} - #{TAGLINE}"
 end
 
@@ -41,3 +44,4 @@ task :uninstall do
 end
 
 task :default => ['install']
+
