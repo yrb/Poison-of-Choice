@@ -157,15 +157,6 @@ nnoremap <silent> <leader>? :execute "Ack! '" . substitute(substitute(substitute
 let g:ruby_debugger_default_script = 'script/rails s'
 let g:ruby_debugger_spec_path = 'rspec'         " set Rspec path
 
-" Map arrow keys to window resizing
-" if bufwinnr(1)
-"   map <Up> <C-W>-
-"   map <Down> <C-W>+
-"   map <Left> <C-W><
-"   map <Right> <C-W>>
-" endif
-
-
 nnoremap <C-W>V :vertical bo split<CR>
 
 " Setup Supertab, also :SuperTabHelp
