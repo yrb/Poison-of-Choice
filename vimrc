@@ -3,6 +3,7 @@ call pathogen#infect()
 set nocompatible
 syntax on
 filetype plugin indent on
+runtime macros/matchit.vim
 
 set background=dark
 colorscheme solarized
