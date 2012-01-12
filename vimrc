@@ -183,3 +183,6 @@ set complete=.,w,b,u,i
 " ]	tag completion
 " t	same as above 
 
+:highlight ExtraWhitespace ctermbg=red guibg=red
+:match ExtraWhitespace /\s\+$/
+
