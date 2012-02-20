@@ -109,7 +109,6 @@ set statusline+=%{strlen(&ft)?&ft:'none'} " filetype
 set statusline+=]
 set statusline+=%h%1*%m%r%w%0* " flag
 set statusline+=%= " right align
-set statusline+=%{ruby_debugger#statusline()}
 set statusline+=%{rvm#statusline()}\ "
 set statusline+=%{fugitive#statusline()}\ "
 set statusline+=%-14.(%l,%c%V%)\ %<%P " offset
@@ -153,10 +152,6 @@ nnoremap <silent> <leader>/ :execute 'vimgrep /'.@/.'/g %'<CR>:copen<CR>
 
 " Ack for the last search.
 nnoremap <silent> <leader>? :execute "Ack! '" . substitute(substitute(substitute(@/, "\\\\<", "\\\\b", ""), "\\\\>", "\\\\b", ""), "\\\\v", "", "") . "'"<CR>
-
-" Common setting for ruby debug
-let g:ruby_debugger_default_script = 'script/rails s'
-let g:ruby_debugger_spec_path = 'rspec'         " set Rspec path
 
 nnoremap <C-W>V :vertical bo split<CR>
 
