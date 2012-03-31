@@ -76,3 +76,6 @@
 [submodule "bundle/rename"]
 	path = bundle/rename
 	url = git://github.com/vim-scripts/Rename.git
+[submodule "bundle/vim-golang"]
+	path = bundle/vim-golang
+	url = git://github.com/jnwhiteh/vim-golang.git
