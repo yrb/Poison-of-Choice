@@ -79,3 +79,18 @@
 [submodule "bundle/vim-golang"]
 	path = bundle/vim-golang
 	url = git://github.com/jnwhiteh/vim-golang.git
+[submodule "bundle/mustache"]
+	path = bundle/mustache
+	url = git://github.com/juvenn/mustache.vim.git
+[submodule "bundle/vim-ruby"]
+	path = bundle/vim-ruby
+	url = git://github.com/vim-ruby/vim-ruby.git
+[submodule "bundle/vim-jst"]
+	path = bundle/vim-jst
+	url = git://github.com/briancollins/vim-jst.git
+[submodule "bundle/gist-vim"]
+	path = bundle/gist-vim
+	url = git://github.com/mattn/gist-vim.git
+[submodule "bundle/webapi-vim"]
+	path = bundle/webapi-vim
+	url = git://github.com/mattn/webapi-vim.git

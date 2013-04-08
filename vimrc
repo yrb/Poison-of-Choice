@@ -5,7 +5,7 @@ syntax on
 filetype plugin indent on
 runtime macros/matchit.vim
 
-set background=dark
+set background=dark "light or dark
 colorscheme solarized
 
 if has('gui_running')
@@ -53,7 +53,8 @@ set shiftwidth=2
 " Round indent by a multiple of shiftwidth in indent mode
 set shiftround
 
-set relativenumber
+" set relativenumber
+set number
 set numberwidth=3                       " Set line number column width 
 
 " WindowAndBufferManagement:
@@ -137,10 +138,6 @@ let mapleader = ","
 " Yank from the cursor to the end of the line, to be consistent with C and D.
 nnoremap Y y$
 
-" ExitInsertMode: Alternative keybinding
-imap jj <Esc>
-imap kk <Esc>
-
 " Don't wrap lines by default
 set nowrap
 
@@ -151,7 +148,7 @@ set mat=2 "How many tenths of a second to blink
 nnoremap <silent> <leader>/ :execute 'vimgrep /'.@/.'/g %'<CR>:copen<CR>
 
 " Ack for the last search.
-nnoremap <silent> <leader>? :execute "Ack! '" . substitute(substitute(substitute(@/, "\\\\<", "\\\\b", ""), "\\\\>", "\\\\b", ""), "\\\\v", "", "") . "'"<CR>
+nnoremap <silent> <leader>? :AckFromSearch!<cr>
 
 nnoremap <C-W>V :vertical bo split<CR>
 
@@ -178,6 +175,26 @@ set complete=.,w,b,u,i
 " ]	tag completion
 " t	same as above 
 
-:highlight ExtraWhitespace ctermbg=red guibg=red
-:match ExtraWhitespace /\s\+$/
+set list                          " Show invisible characters
+" List chars
+set listchars=""                  " Reset the listchars
+set listchars=tab:\ \             " a tab should display as "  ", trailing whitespace as "."
+set listchars+=trail:.            " show trailing spaces as dots
+set listchars+=extends:>          " The character to show in the last column when wrap is
+                                  " off and the line continues beyond the right of the screen
+set listchars+=precedes:<         " The character to show in the last column when wrap is
+                                  " off and the line continues beyond the right of the screen
 
+"Color column 81
+set colorcolumn=81
+
+" Gists should be priavte by default
+let g:gist_post_private = 1
+let g:gist_clip_command = 'pbcopy'
+
+let g:ctrlp_match_window_reversed = 0
+let g:ctrlp_match_window_bottom = 1
+
+nmap <leader>c :let @* = expand("%:p")<cr>
+
+nmap <leader>e :split <C-R>=expand("%:h").'/'<CR><BS>/
